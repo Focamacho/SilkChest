@@ -5,7 +5,7 @@
   "description": "Collect chests with items using silk touch.",
   "version": "${version}",
   "mcversion": "${mcversion}",
-  "url": "",
+  "url": "https://www.curseforge.com/minecraft/mc-mods/silk-chest",
   "updateUrl": "",
   "authorList": ["Focamacho"],
   "credits": "",

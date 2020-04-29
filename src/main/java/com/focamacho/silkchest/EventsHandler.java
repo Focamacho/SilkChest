@@ -1,7 +1,5 @@
 package com.focamacho.silkchest;
 
-import java.util.Map;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.enchantment.Enchantment;
@@ -14,14 +12,16 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.util.text.TextFormatting;
-import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import java.util.Map;
 
 public class EventsHandler {
 
@@ -55,7 +55,7 @@ public class EventsHandler {
 					}
 				}
 			}
-			if(i >= 5) event.getToolTip().add(TextFormatting.ITALIC + I18n.translateToLocal("container.shulkerBox.more").replace("%s",  Integer.toString(j - i)));
+			if(i >= 5) event.getToolTip().add(TextFormatting.ITALIC + new TextComponentTranslation("container.shulkerBox.more").getFormattedText().replace("%s",  Integer.toString(j - i)));
 		}
 	}
 	

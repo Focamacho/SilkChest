@@ -1,11 +1,5 @@
 package com.focamacho.silkchest;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
-
-import org.apache.logging.log4j.Logger;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraftforge.common.MinecraftForge;
@@ -14,6 +8,11 @@ import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import org.apache.logging.log4j.Logger;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 @Mod(modid = SilkChest.MODID, name = SilkChest.NAME, version = SilkChest.VERSION)
 public class SilkChest
