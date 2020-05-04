@@ -1,0 +1,12 @@
+modLoader="javafml"
+loaderVersion="[31,)"
+issueTrackerURL="https://github.com/Focamacho/SilkChest/issues"
+[[mods]]
+modId="silkchest"
+version="${file.jarVersion}"
+displayName="Silk Chest"
+displayURL="https://www.curseforge.com/minecraft/mc-mods/silk-chest"
+authors="Focamacho"
+description='''
+Using this you can break chests using silk touch without losing the items inside them.
+'''
