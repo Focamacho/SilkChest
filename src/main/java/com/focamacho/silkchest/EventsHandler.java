@@ -40,22 +40,26 @@ public class EventsHandler {
 	@SideOnly(Side.CLIENT)
 	@SubscribeEvent
 	public void itemToolTip(ItemTooltipEvent event) {
-		if(event.getItemStack().hasTagCompound() && event.getItemStack().getTagCompound().hasKey("BlockEntityTag")) {
-			NonNullList<ItemStack> itemsList = NonNullList.withSize(200, ItemStack.EMPTY);
-            ItemStackHelper.loadAllItems(event.getItemStack().getTagCompound().getCompoundTag("BlockEntityTag"), itemsList);
-			int i = 0;
-			int j = 0;
-            for(ItemStack item : itemsList) {
-				if(!item.isEmpty()) {
-					if(i < 5) {
-						i++;
-						event.getToolTip().add(item.getDisplayName() + " x" + item.getCount());
-					} else {
-						j++;
+		for(IBlockState block : SilkChest.SilkBlocks) {
+			if (event.getItemStack().getItem().getRegistryName().equals(block.getBlock().getRegistryName())) {
+				if (event.getItemStack().hasTagCompound() && event.getItemStack().getTagCompound().hasKey("BlockEntityTag")) {
+					NonNullList<ItemStack> itemsList = NonNullList.withSize(200, ItemStack.EMPTY);
+					ItemStackHelper.loadAllItems(event.getItemStack().getTagCompound().getCompoundTag("BlockEntityTag"), itemsList);
+					int i = 0;
+					int j = 0;
+					for (ItemStack item : itemsList) {
+						if (!item.isEmpty()) {
+							if (i < 5) {
+								i++;
+								event.getToolTip().add(item.getDisplayName() + " x" + item.getCount());
+							}
+							j++;
+						}
 					}
+					if (i >= 5 && j - i > 0) event.getToolTip().add(new TextComponentTranslation("container.shulkerBox.more", j - i).getFormattedText());
+					return;
 				}
 			}
-			if(i >= 5) event.getToolTip().add(TextFormatting.ITALIC + new TextComponentTranslation("container.shulkerBox.more").getFormattedText().replace("%s",  Integer.toString(j - i)));
 		}
 	}
 	

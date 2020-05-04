@@ -19,7 +19,7 @@ public class SilkChest
 {
     public static final String MODID = "silkchest";
     public static final String NAME = "Silk Chest";
-    public static final String VERSION = "1.2";
+    public static final String VERSION = "1.3";
     
     public static List<IBlockState> SilkBlocks = new ArrayList<IBlockState>();
 
