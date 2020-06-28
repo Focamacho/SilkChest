@@ -7,6 +7,7 @@ import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorld;
 import net.minecraftforge.event.world.BlockEvent;
@@ -35,7 +36,14 @@ public class BlockBreakEvent {
                     //Save data to NBT
                     CompoundNBT nbt = new CompoundNBT();
                     world.getTileEntity(pos).write(nbt);
-                    itemBlock.setTagInfo("BlockEntityTag", nbt);
+
+                    if(itemBlock.getItem().getRegistryName().equals(new ResourceLocation("minecraft:spawner"))) {
+                        CompoundNBT spawnerNbt = new CompoundNBT();
+                        spawnerNbt.putString("silkchest", nbt.getCompound("SpawnData").getString("id"));
+                        itemBlock.setTag(spawnerNbt);
+                    } else {
+                        itemBlock.setTagInfo("BlockEntityTag", nbt);
+                    }
 
                     //Remove the Tile-Entity to prevent items from being dropped
                     world.getTileEntity(pos).remove();

@@ -2,8 +2,10 @@ package com.focamacho.silkchest;
 
 import com.focamacho.silkchest.config.ConfigSilkChest;
 import com.focamacho.silkchest.events.BlockBreakEvent;
+import com.focamacho.silkchest.events.SpawnerPlaceEvents;
 import com.focamacho.silkchest.events.TooltipEvent;
 import net.minecraft.block.Block;
+import net.minecraft.server.MinecraftServer;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
@@ -35,6 +37,7 @@ public class SilkChest {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
 
         MinecraftForge.EVENT_BUS.register(new BlockBreakEvent());
+        MinecraftForge.EVENT_BUS.register(new SpawnerPlaceEvents());
     }
 
     private void setup(final FMLCommonSetupEvent event) {
