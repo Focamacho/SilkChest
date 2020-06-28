@@ -45,13 +45,9 @@ public class SilkChest
     		String[] split = string.split(":");
     		try {
 	    		if(split.length > 2) {
-	    			if(Block.getBlockFromName(split[0] + ":" + split[1]).getStateFromMeta(Integer.parseInt(split[3])) != null) {
-	    				SilkBlocks.add(Block.getBlockFromName(split[0] + ":" + split[1]).getStateFromMeta(Integer.parseInt(split[3])));
-	    			}
+	    		    SilkBlocks.add(Block.getBlockFromName(split[0] + ":" + split[1]).getStateFromMeta(Integer.parseInt(split[3])));
 	    		} else {
-	    			if(Block.getBlockFromName(split[0] + ":" + split[1]).getDefaultState() != null) {
-	    				SilkBlocks.add(Block.getBlockFromName(split[0] + ":" + split[1]).getDefaultState());
-	    			}
+	    		    SilkBlocks.add(Block.getBlockFromName(split[0] + ":" + split[1]).getDefaultState());
 	    		}
     		} catch(Exception e) {
     			logger.error(e);

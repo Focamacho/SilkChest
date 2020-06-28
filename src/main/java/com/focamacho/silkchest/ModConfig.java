@@ -31,7 +31,7 @@ public class ModConfig {
 		
 		category = "Principal";
 		config.addCustomCategoryComment(category, "Add here any block you wanna keep the items inside it when using silk touch");
-		silkList = config.get(category, "silkList", new String[] {"minecraft:chest", "minecraft:trapped_chest", "ironchest:iron_chest"}).getStringList();
+		silkList = config.get(category, "silkList", new String[] {"minecraft:chest", "minecraft:trapped_chest", "ironchest:iron_chest", "minecraft:mob_spawner"}).getStringList();
 		
 		if(config.hasChanged()){
 			config.save();
