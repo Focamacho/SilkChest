@@ -2,7 +2,7 @@
 {
   "modid": "silkchest",
   "name": "Silk Chest",
-  "description": "Using this you can any block using silk touch without losing the items inside them.",
+  "description": "Using this you can break any block using silk touch without losing the items inside them.",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "https://www.curseforge.com/minecraft/mc-mods/silk-chest",
