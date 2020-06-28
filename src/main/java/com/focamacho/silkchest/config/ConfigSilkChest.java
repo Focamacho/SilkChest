@@ -22,7 +22,7 @@ public class ConfigSilkChest {
         public General(final ForgeConfigSpec.Builder builder) {
             builder.push("Silk Chest");
 
-            silkList = builder.comment("Add here any block you wanna keep the items inside it when using silk touch").defineList("silkList", Lists.newArrayList("minecraft:chest", "minecraft:trapped_chest"),  string -> {
+            silkList = builder.comment("Add here any block you wanna keep the items inside it when using silk touch").defineList("silkList", Lists.newArrayList("minecraft:chest", "minecraft:trapped_chest", "minecraft:spawner"),  string -> {
                 if(string instanceof String) {
 
                     Block block = ForgeRegistries.BLOCKS.getValue(new ResourceLocation((String)string));
