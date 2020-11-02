@@ -52,7 +52,7 @@ public class BlockBreakEvent {
                     world.setBlockState(pos, Blocks.AIR.getDefaultState(), 1);
 
                     //Drop the new Item with the NBTTag
-                    world.addEntity(new ItemEntity(world.getWorld(), pos.getX(), pos.getY(), pos.getZ(), itemBlock));
+                    world.addEntity(new ItemEntity(event.getPlayer().world, pos.getX(), pos.getY(), pos.getZ(), itemBlock));
                 }
             }
         }

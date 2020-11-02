@@ -1,5 +1,6 @@
 modLoader="javafml"
 loaderVersion="[32,)"
+license = "MIT-1.0"
 issueTrackerURL="https://github.com/Focamacho/SilkChest/issues"
 [[mods]]
 modId="silkchest"
